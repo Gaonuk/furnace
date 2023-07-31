@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://gaonuk.xyz">
       <picture>
-        <img alt="furnace logo" src="https://github.com/gaonuk/furnace/blob/main/public/furnace.webp" width="auto" height="60">
+        <img alt="furnace logo" src="https://github.com/gaonuk/furnace/blob/main/public/furnace-icon.png" width="auto" height="128">
       </picture>
 </a>
 </p>
