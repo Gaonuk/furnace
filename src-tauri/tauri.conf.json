@@ -12,11 +12,26 @@
   },
   "tauri": {
     "allowlist": {
+      "all": false,
       "shell": {
-        "all": true,
         "execute": true,
         "sidecar": true,
-        "open": true
+        "open": true,
+        "scope": [
+          {
+            "name": "run-anvil",
+            "cmd": "anvil"
+          }
+        ]
+      },
+      "fs": {
+        "all": false,
+        "exists": true,
+        "readDir": true,
+        "readFile": true
+      },
+      "path": {
+        "all": true
       }
     },
     "bundle": {
@@ -34,7 +49,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.furnace.dev",
+      "identifier": "com.gaonuk.furnace",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -43,8 +58,7 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-      "resources": [],
-      "shortDescription": "",
+      "shortDescription": "Anvil UI with power-ups. Built with Tauri.",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,

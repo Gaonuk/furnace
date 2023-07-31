@@ -1,7 +1,35 @@
 'use client'
 import Image from 'next/image'
+import { Command } from "@tauri-apps/api/shell"
+import { createPublicClient, http, PublicClient } from "viem"
+import { foundry } from "viem/chains"
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [client, setClient] = useState<PublicClient>()
+
+
+  const anvilCommand = new Command('run-anvil')
+  const launchAnvil = async () => {
+    const output = await anvilCommand.execute();
+    console.log(output)
+    // const anvilClient = createPublicClient({
+    //   chain: foundry,
+    //   transport: http(),
+    //   pollingInterval: 5_000,
+    // })
+    // setClient(anvilClient)
+  }
+
+  // useEffect(() => {
+  //   if (client) {
+  //     client.getBlockNumber().then(blockNumber => {
+  //       console.log(blockNumber)
+  //     })
+  //   }
+  // }, [client])
+
+
 
   return (
     <main className="flex min-h-screen flex-col items-center gap-y-24 p-24">
@@ -31,6 +59,7 @@ export default function Home() {
           <button
             className="text-left group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             rel="noopener noreferrer"
+            onClick={launchAnvil}
           >
             <h2 className={`mb-3 text-2xl font-semibold`}>
               Launch{' '}
